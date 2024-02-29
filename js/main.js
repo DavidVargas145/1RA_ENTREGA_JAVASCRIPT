@@ -18,6 +18,7 @@ function JuegoPiedraPepelTijeras() {
 
     //**/ Juego / */
     let Jugador1 = prompt("Hola " + nombre + " \n¿Estas preparado? " + " \n \nEstas son las opciones que puedes ejegir: Piedra | Papel | Tijeras ¡Ingresa tu jugada!");
+    let Novalid = 0;
 
     //** Batalla **//
     if (Jugador1 === "Piedra" && jugadorPc === "Tijeras") {
@@ -28,6 +29,10 @@ function JuegoPiedraPepelTijeras() {
         alert("HAZ GANADO TU CONTRINCANTE HA ELIGIDO..." + jugadorPc);
     } else if (Jugador1 == jugadorPc) {
         alert("HAZ EMPATADO TU CONTRINCANTE HA ELIGIDO..." + jugadorPc);
+    } else if (Jugador1 !== "Tijeras" && Jugador1 !== "Papel" && Jugador1 !== "Piedra") {
+        alert("Opcion no validad.");
+        Novalid++;
+        JuegoPiedraPepelTijeras(Jugador1);;
     } else {
         alert("HAZ PERDIDO TU CONTRINCANTE HA ELIGIDO..." + jugadorPc);
     }
